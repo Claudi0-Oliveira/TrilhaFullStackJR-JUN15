@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Seleciona os elementos do DOM
     const addProjectForm = document.getElementById('addProjectForm');
     const projectsTableBody = document.getElementById('projectsTableBody');
-    const successMessage = document.getElementById('successMessage');
+    const editModal = document.getElementById('editModal');
+    const confirmDeleteModal = document.getElementById('confirmDeleteModal');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+    const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
 
     // Função para buscar e exibir os projetos
     const fetchProjects = async () => {
@@ -43,11 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             if (response.ok) {
                 addProjectForm.reset();
-                successMessage.style.display = 'block';
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 3000);
                 fetchProjects();
+                alert('Projeto adicionado com sucesso!');
             } else {
                 console.error('Erro ao adicionar projeto:', response.statusText);
             }
@@ -57,18 +57,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Função para excluir um projeto
+    let projectToDeleteId = null;
+
     projectsTableBody.addEventListener('click', async (event) => {
         if (event.target.classList.contains('delete-btn')) {
-            const id = event.target.getAttribute('data-id');
+            projectToDeleteId = event.target.getAttribute('data-id');
+            confirmDeleteModal.style.display = 'block';
+        }
+    });
+
+    // Confirmar exclusão
+    confirmDeleteBtn.addEventListener('click', async () => {
+        if (projectToDeleteId) {
             try {
-                await fetch(`${apiUrl}/${id}`, {
+                await fetch(`${apiUrl}/${projectToDeleteId}`, {
                     method: 'DELETE'
                 });
+                confirmDeleteModal.style.display = 'none';
                 fetchProjects();
+                projectToDeleteId = null;
+                alert('Projeto excluído com sucesso!');
             } catch (error) {
                 console.error('Erro ao excluir projeto:', error);
             }
         }
+    });
+
+    // Cancelar exclusão
+    cancelDeleteBtn.addEventListener('click', () => {
+        confirmDeleteModal.style.display = 'none';
+        projectToDeleteId = null;
     });
 
     // Função para editar um projeto
@@ -80,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('editProjectId').value = id;
             document.getElementById('editTitle').value = title;
             document.getElementById('editDescription').value = description;
-            document.getElementById('editModal').style.display = 'block';
+            editModal.style.display = 'block';
         }
     });
 
@@ -97,22 +115,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title, description })
             });
-            document.getElementById('editModal').style.display = 'none';
+            editModal.style.display = 'none';
             fetchProjects();
+            alert('Alterações salvas com sucesso!');
         } catch (error) {
             console.error('Erro ao editar projeto:', error);
         }
     });
 
-    // Função para fechar o modal
+    // Função para fechar o modal de edição
     document.querySelector('.close').addEventListener('click', () => {
-        document.getElementById('editModal').style.display = 'none';
+        editModal.style.display = 'none';
     });
 
-    // Fecha o modal se clicar fora do conteúdo
+    // Fecha o modal de edição se clicar fora do conteúdo
     window.addEventListener('click', (event) => {
-        if (event.target === document.getElementById('editModal')) {
-            document.getElementById('editModal').style.display = 'none';
+        if (event.target === editModal) {
+            editModal.style.display = 'none';
         }
     });
 
