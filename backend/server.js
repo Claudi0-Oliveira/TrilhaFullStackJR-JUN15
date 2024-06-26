@@ -85,5 +85,5 @@ app.delete('/api/projects/:id', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando em https://certo-coders.netlify.app:${port}`);
 });
