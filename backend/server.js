@@ -1,20 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { Sequelize } = require('sequelize');
+const sequelize = require('./config/database');
 const Project = require('./models/Project');
 
 const app = express();
 const port = 3000;
 
-// Configurações do Sequelize
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: 'database.sqlite'
-});
-
 // Middleware
-app.use(cors());  // Permite requisições de outros domínios
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -85,5 +79,5 @@ app.delete('/api/projects/:id', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em https://certo-coders.netlify.app:${port}`);
+    console.log(`Servidor rodando na porta ${port}`);
 });
