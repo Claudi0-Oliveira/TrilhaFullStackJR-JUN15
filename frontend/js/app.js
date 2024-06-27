@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://certo-coders.netlify.app/api/projects';
+    const apiUrl = 'https://trilha-full-stack-jr-jun-15-back.vercel.app/api/projects';
 
     // Seleciona os elementos do DOM
     const addProjectForm = document.getElementById('addProjectForm');
