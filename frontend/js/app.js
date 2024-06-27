@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://trilhafullstackjr-jun15-production-96c0.up.railway.app:3000/api/projects';
+    const apiUrl = 'https://trilhafullstackjr-jun15-production-96c0.up.railway.app/api/projects';
 
     // Seleciona os elementos do DOM
     const addProjectForm = document.getElementById('addProjectForm');
