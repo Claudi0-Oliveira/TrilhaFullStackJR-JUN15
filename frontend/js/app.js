@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://trilha-full-stack-jr-jun-15-back.vercel.app/api/projects';
+    const apiUrl = 'http://localhost:3000/api/projects';
 
     // Seleciona os elementos do DOM
     const addProjectForm = document.getElementById('addProjectForm');
