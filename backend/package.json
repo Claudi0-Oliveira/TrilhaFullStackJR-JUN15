@@ -1,10 +1,10 @@
 {
   "name": "trilhafullstackjr-jun15",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
