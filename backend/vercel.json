@@ -12,5 +12,5 @@
       "dest": "server.js"
     }
   ],
-  "installCommand": "npm install"
+  "installCommand": "npm ci --only=production"
 }
