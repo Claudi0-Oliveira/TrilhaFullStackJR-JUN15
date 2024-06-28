@@ -5,7 +5,7 @@ const sequelize = require('./config/database');
 const Project = require('./models/Project');
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors());
