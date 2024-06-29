@@ -16,8 +16,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
+    height: 100vh;
     box-sizing: border-box;
     margin: 20px;
+    overflow: auto; /* Impede que conteúdo ultrapasse as bordas do container */
 }
 
 header h1 {
