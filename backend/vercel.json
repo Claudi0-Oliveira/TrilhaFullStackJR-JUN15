@@ -12,5 +12,5 @@
       "dest": "server.js"
     }
   ],
-  "installCommand": "npm ci --only=production"
+  "installCommand": "npm install sqlite3"
 }
