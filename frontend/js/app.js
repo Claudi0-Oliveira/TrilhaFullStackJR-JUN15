@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'http://localhost:3001/api/projects';
+    const apiUrl = 'https://trilhafullstackjr-jun15-gdae.onrender.com/api/projects';
 
     // Seleciona os elementos do DOM
     const addProjectForm = document.getElementById('addProjectForm');
