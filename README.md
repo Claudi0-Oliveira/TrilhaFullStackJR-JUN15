@@ -1,92 +1,114 @@
+# Trilha FullStack Jr - JUN15
+
 ![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)
 
-# 📚 Trilha Inicial FullStack Jr
-Este projeto tem como objetivo desenvolver uma aplicação web completa para gerenciamento de projetos, juntamente com um servidor back-end. A aplicação web permitirá aos usuários listar, cadastrar, editar e excluir projetos, cada um contendo um título e uma descrição.
+### Link do Projeto On-line:
+https://trilha-full-stack-jr-jun-15.vercel.app/
 
-## FrontEnd:
-- **HTML/CSS/JavaScript puro:** Utilize HTML para estruturar a página, CSS para estilização e JavaScript puro (ou jQuery, se preferir) para manipulação de DOM e interações com o servidor.
-- Implemente uma página para listar os projetos cadastrados.
-- Desenvolva formulários para adicionar e editar projetos.
-- Inclua botões para editar e deletar projetos, com confirmação antes de executar a ação.
+## Descrição do Projeto
+Este projeto é uma aplicação web completa para gerenciamento de projetos, desenvolvida como parte da Trilha FullStack Jr. A aplicação permite aos usuários listar, cadastrar, editar e excluir projetos, cada um contendo um título e uma descrição.
 
-## BackEnd:
-- **Node.js (Express), Python (Flask/Django), Java (Spring Boot), etc.:** Escolha uma linguagem e framework de sua preferência para criar um servidor que irá fornecer APIs RESTful para operações CRUD.
-- Configure rotas para manipular os projetos, utilizando métodos HTTP adequados (GET, POST, PUT, DELETE).
-- Utilize um banco de dados (SQL ou NoSQL) para armazenar os projetos.
+## Funcionalidades
+- Listar projetos cadastrados
+- Adicionar novos projetos
+- Editar projetos existentes
+- Excluir projetos
 
-#### Tecnologias Recomendadas:
-- **Front-end:** HTML, CSS, JavaScript, React.js
-- **Back-end:** Node.js, Express.js
-- **Banco de Dados:** SQLite (com Sequelize ou outro ORM)
-- **Autenticação:** JWT (JSON Web Tokens)
-- **Deploy:** Heroku, Vercel, ou outro serviço de hospedagem gratuito
+## Tecnologias Utilizadas
+### Frontend
+- **HTML**: Utilizado para estruturar a página.
+- **CSS**: Utilizado para estilização da página.
+- **JavaScript**: Utilizado para manipulação de DOM e interações com o servidor.
+- **Fetch API**: Utilizada para realizar requisições HTTP assíncronas.
 
-Primordial: Utilizar as cores da paleta da **Codigo Certo Coders:**
-![Codigo Certo Coders Cores](https://github.com/codigocerto/TrilhaFrontEndJR-JUN15/assets/170693068/5ced1a97-b2c6-4f54-836c-7b3e115f879f)
-- **#000000** (preto)
-- **#e53939** (vermelho)
-- **#ffffff** (branco)
+### Backend
+- **Node.js**: Ambiente de execução JavaScript no servidor.
+- **Express.js**: Framework web para Node.js.
+- **Sequelize**: ORM (Object-Relational Mapping) para Node.js.
+- **SQLite**: Banco de dados SQL leve e autônomo.
+- **cors**: Middleware para habilitar CORS (Cross-Origin Resource Sharing).
+- **body-parser**: Middleware para analisar o corpo das requisições.
 
-### Detalhes Técnicos: 🔧
-- **Boas Práticas:** Utilizar boas práticas de código limpo, legível e bem documentado.
-- **Git:** Utilizar Git para controle de versão e submeter o projeto através de um repositório público no GitHub.
+## Estrutura do Projeto
+```plaintext
+trilha-fullstackjr-jun15/
+│
+├── backend/
+│   ├── config/
+│   │   └── database.js
+│   ├── controllers/
+│   │   └── projectController.js
+│   ├── models/
+│   │   └── Project.js
+│   ├── routes/
+│   │   └── projectRoutes.js
+│   ├── database.sqlite
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── frontend/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── app.js
+│   └── index.html
+│
+├── .gitignore
+└── README.md
+```
+## Configuração do Ambiente
+### Pré-requisitos
+- Node.js e npm instalados
+- Conta no Vercel para deploy do frontend
+- Conta no Render para deploy do backend
 
-### Apreciações: 🎉
-- **Permitir edição dos conteúdos.**
-- **Utilização máxima possível de HTML semântico.**
-- **Segurança Reforçada.**
-- **Documentação Excepcional.**
-- **Escalabilidade**
+### Passo a Passo
+1. Clone o repositório
+```plaintext
+git clone https://github.com/usuario/trilha-fullstackjr-jun15.git
+cd trilha-fullstackjr-jun15
+```
+2. Configuração do Backend
 
-### Dicas para Abordar o Projeto 🌟
-- **Crie um Fork desse Repositório.**
-- **Criar do Zero:** É fundamental que o projeto seja desenvolvido completamente do zero, demonstrando suas habilidades e criatividade desde o início.
-- **Atenção aos Detalhes Visuais:** Utilize a paleta de cores e elementos visuais de forma coesa para uma experiência impactante.
-- **Versionamento com Git:** Faça uso eficiente do Git para controlar suas alterações e manter um histórico claro do desenvolvimento.
+    - Navegue até o diretório do backend:
+        ```plaintext
+        cd backend
+        ```
+    - Instale as dependências:
+        ```plaintext
+        npm install
+        ```
+    - Inicie o servidor:
+        ```plaintext
+        node server.js
+        ```
+3. Configuração do Frontend
 
-### Critérios de Avaliação: 📝
-- **Documentação:** Documentação adequada do projeto, incluindo descrição do funcionamento, instruções de instalação e configuração (se aplicável).
-- **Funcionalidade:** A aplicação deve atender à estrutura da página e aos requisitos definidos.
-- **Qualidade do Código:** O código deve ser limpo, bem estruturado e adequadamente documentado.
-- **UI/UX:** A interface do usuário deve ser intuitiva e visualmente atraente.
-- **Uso do Git:** Utilização eficaz do controle de versão com mensagens de commit significativas.
-- **Hospedagem e Deploy** A aplicação front-end e o servidor back-end estão hospedados de forma acessível ao público.
+    - Navegue até o diretório do frontend:
+        ```plaintext
+        cd ../frontend
+        ```
+    - Instale as dependências:
+        ```plaintext
+        npm install
+        ```
+    - Abra o arquivo **js/app.js** e ajuste a URL da API para o seu backend hospedado no Render.
 
-### Não Queremos 🚫
-- Descobrir que o candidato não foi quem realizou o teste.
-- Ver commits grandes sem muita explicação nas mensagens no repositório.
-- Entregas padrão ou cópias de outros projetos. Buscamos originalidade e autenticidade em cada contribuição.
+4. Deploy
+    - **Backend:** Siga as instruções para fazer o deploy no Render.
+    - **Frontend:** Siga as instruções para fazer o deploy no Vercel.
 
-### Prazo ⏳
-Os candidatos devem completar a trilha em no máximo em 2 semanas, começando a contar a partir de 15/06.
+## Uso
+- Abra o navegador e navegue até o URL do frontend hospedado.
+- Utilize a interface para gerenciar seus projetos (listar, adicionar, editar e excluir).
 
-A conclusão da trilha inicial é um requisito obrigatório para avançar para a trilha 
-final. Caso a trilha inicial não seja concluída dentro do prazo estabelecido, o 
-candidato estará impossibilitado de prosseguir para trilha final.
+## Contribuição
+- Fork o projeto.
+- Crie uma nova branch (git checkout -b feature/nova-feature).
+- Faça commit das suas alterações (git commit -am 'Adiciona nova feature').
+- Faça push para a branch (git push origin feature/nova-feature).
+- Abra um Pull Request.
 
-**Data máxima para entrega: 29/06**
-
-### Instruções de Entrega: 📬
-Após finalizar o projeto, publique-o em uma URL pública (por exemplo, Vercel, Netlify, GitHub Pages, etc.) e hospede o seu servidor na nuvem. Use serviços que ofereçam uso gratiuto por um período, como a AWS e preencha o [Formulário](https://forms.gle/gZViPMTSDV5nidSu6):  
-
----
-
-### Desafio da Inovação 🚀
-Achou esse projeto inicial simples? Eleve ainda mais! Estamos em busca de mentes inovadoras que não apenas criem, mas que também desafiem os padrões. Como você pode transformar essa estrutura inicial em algo verdadeiramente extraordinário? Demonstre o poder da sua criatividade e o impacto das suas ideias inovadoras!
-
----
-
-🔗 **Mantenha-se Conectado:**
-- [Discord](https://discord.gg/wzA9FGZHNv)
-- [Website](http://www.codigocertocoders.com.br/)
-- [LinkedIn](https://www.linkedin.com/company/codigocerto/)
-  
-🌐 **Contato:**
-- Email: codigocertocoders@gmail.com
-
----
-
-### Precisa de Ajuda?
-Está com alguma dificuldade, encontrou algum problema no desafio ou tem alguma sugestão pra gente? Crie uma issue e descreva o que achar necessário.
-
-**Construindo o amanhã, hoje.**
+## Contato
+Se você tiver dúvidas ou sugestões, entre em contato pelo email: claudio@cjservices.com.br
